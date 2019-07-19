@@ -20,4 +20,4 @@ def accept():
     else:
         return('500')
 
-app.run()
+app.run(host='0.0.0.0')
