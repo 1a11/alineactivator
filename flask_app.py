@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import request
 from flask import jsonify
+import os
 import db_worker as dat
 app = Flask(__name__)
 
@@ -19,5 +20,6 @@ def accept():
         return(skey)
     else:
         return('500')
-
-app.run(host='0.0.0.0')
+    
+port = int(os.environ.get("PORT", 5000))
+app.run(debug=True, host='0.0.0.0', port=port)
